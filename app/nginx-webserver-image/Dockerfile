@@ -5,9 +5,4 @@
 FROM nginx:stable
 
 #Copy the preferred html page as index.html and assign different build contexts
-COPY --from=html-grey-base . /usr/share/nginx/html/
-
-#COPY --from=html-blue ../blue/src/hello-blue.html /usr/local/apache2/htdocs/index.html 
-#COPY --from=html-green ../blue/src/hello-green.html /usr/local/apache2/htdocs/index.html 
-#COPY --from=html-yellow ../blue/src/hello-yellow.html /usr/local/apache2/htdocs/index.html 
-
+COPY --from=html-app . /usr/share/nginx/html/
